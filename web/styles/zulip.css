@@ -849,6 +849,22 @@ strong {
     }
 }
 
+.tippy-content .typeahead.dropdown-menu .typeahead-menu .active > a {
+    &,
+    &:hover,
+    &:focus {
+        /* This achieves two purposes:
+        1. Simulates outline-offset but only horizontally.
+        2. Ensure background hover color applies to whole item if hovered without focus.
+        (Happens if mouse is at a different item than focused item)
+        */
+        margin: 0 2px;
+        padding: 3px 8px;
+        outline: 1px solid var(--color-outline-focus);
+        border-radius: 4px;
+    }
+}
+
 /* Copied from bootstrap 2.1.1 CSS for dropdown-menu li > a:focus */
 li.actual-dropdown-menu > a:focus {
     color: hsl(0deg 0% 100%);
