@@ -849,7 +849,11 @@ strong {
     }
 }
 
-.tippy-content .typeahead.dropdown-menu .typeahead-menu .active > a {
+.tippy-content
+    .typeahead.dropdown-menu
+    .typeahead-menu
+    .active.typeahead-keyboard-highlight
+    > a {
     &,
     &:hover,
     &:focus {

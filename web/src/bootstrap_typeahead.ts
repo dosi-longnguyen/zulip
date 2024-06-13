@@ -468,14 +468,16 @@ export class Typeahead<ItemType extends string | object> {
     }
 
     next(): void {
-        const $active = this.$menu.find(".active").removeClass("active");
+        const $active = this.$menu
+            .find(".active")
+            .removeClass("active typeahead-keyboard-highlight");
         let $next = $active.next();
 
         if (!$next.length) {
             $next = this.$menu.find("li").first();
         }
 
-        $next.addClass("active");
+        $next.addClass("active typeahead-keyboard-highlight");
 
         if (this.naturalSearch) {
             this.set_value();
@@ -483,14 +485,16 @@ export class Typeahead<ItemType extends string | object> {
     }
 
     prev(): void {
-        const $active = this.$menu.find(".active").removeClass("active");
+        const $active = this.$menu
+            .find(".active")
+            .removeClass("active typeahead-keyboard-highlight");
         let $prev = $active.prev();
 
         if (!$prev.length) {
             $prev = this.$menu.find("li").last();
         }
 
-        $prev.addClass("active");
+        $prev.addClass("active typeahead-keyboard-highlight");
 
         if (this.naturalSearch) {
             this.set_value();
@@ -731,7 +735,7 @@ export class Typeahead<ItemType extends string | object> {
             $(e.currentTarget).find("a").css("cursor", "none");
             return;
         }
-        this.$menu.find(".active").removeClass("active");
+        this.$menu.find(".active").removeClass("active typeahead-keyboard-highlight");
         $(e.currentTarget).addClass("active");
     }
 }
